@@ -19,9 +19,10 @@ In this lab, we learned how to make clock dividers from two types of counters.
 
 ### 1 - Why does the Modulo Counter actually divide clocks by 2 * Count?
 * The modulo counter divides the clocks by the modulus N. It goes thru N number of states before restarting at 0.
+* It uses the adder circuits which take 2 cycles from the previous latch for each cycle it has.
 
 ### 2 - Why does the ring counter's output go to all 1s on the first clock cycle?
-* Because the Q output of the last d-flipflop, is also used as an input.
+* Because the Q output of the last d-flipflop, is also used as an input. This configuration creates what can be considered a "down counter" which starts from the highest value and counts down.
 
 ### 3 - What width of ring counter would you use to get to an output of ~1KHz?
-* log2(1000)
+* log2(1000) = 9.97. Therefore a width of 10 is required.
